@@ -109,7 +109,26 @@ body.open-menu {
     color: var(--sub-text-color);
 }
 
+
+
+.cart__span-box {
+    display: none;
+    align-items: center;
+}
+.cart__span-box svg {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+}
+.cart__span {
+    font-size: 3rem;
+    font-family: var(--title-font);
+}
 @media screen and (min-width: 1024px) {
+    .cart__span-box {
+        display: flex;
+        margin-right: 3rem;
+    }
     .header {
         padding: 2rem;
     }
