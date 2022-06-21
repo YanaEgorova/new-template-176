@@ -112,9 +112,7 @@
                 <li class="item">
                   <a href="./purchase.html" class="footer__link">Terms of Purchase</a>
                 </li>
-                <li class="item">
-    <a href="./cancellation.html" class="footer__link">Cancellation</a>
-  </li>
+          
               </ul>
             </div>
             <div class="footer__block">
