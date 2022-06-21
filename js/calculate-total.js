@@ -26,20 +26,32 @@ export const maxAmount = 12;
 
 
 function cartAdd(e) {
-    console.log(111)
+    console.log('222222');
+
+    let size = false;
+    const select = document.querySelector('.js_prod__select');
+    
+    if(select && select.value !== 'Select') {
+        size = select.value;
+    } else if (select) {
+        document.body.classList.add('size-error-active');
+        return;
+        console.log('WINDOW', document.querySelector('.js_size__overlay'));
+    }
+
     const btn = e.currentTarget;
     const parent = btn.closest('.js_prod__block');
     const amount = parent.querySelector('.js_prod__amount-span');
     const id = parent.getAttribute('id');
 
     let total = parseFloat(parent.querySelector('.js_prod__price').textContent.substr(1));
-    console.log(total);
+   
     let okay = true;
 
     getLocalStorageItem().forEach(product => {
        const productTotal = Number((product.quantity * product.price).toFixed(2));
        total = total + productTotal;
-       console.log(total);
+      
     })
 
     if (total > 500) {
@@ -61,8 +73,8 @@ function cartAdd(e) {
 
         setAmountToCartSpan();
 
-        localStorage(id, amount.textContent);
-        console.log('btn', btn)
+        localStorage(id, amount.textContent, size);
+     
         const successMessageSpan = document.querySelector('.js_success-product-name');
         const successMessage = document.querySelector('.js_success-message');
         const name = document.querySelector('.js_prod__title').textContent;
@@ -85,7 +97,7 @@ function increment(e) {
 }
 
 function decrement(e) {
-    console.log('decrement')
+  
     // incrementBtn.classList.remove('disable-btn');
     // if(e.currentTarget.classList.contains('disable-btn')) {
     //     return;

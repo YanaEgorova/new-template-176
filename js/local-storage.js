@@ -1,12 +1,24 @@
 import { products } from './data/products.js';
-export const localStorage = (id, count) => {
+export const localStorage = (id, count, ringSize = 6) => {
+  
     const actualProduct = products.find(product => product.id === id);
+  
+
     let cart = window.localStorage.getItem('cart');
     if(cart) {
         cart = JSON.parse(cart);
         const isFindProduct = cart.some(product => product.id === id);
         if(isFindProduct) {
-            const updateCart = cart.map(product => product.id === id ? {...product,quantity : count ? Number(count) : product.quantity + 1} : product);
+            const updateCart = cart.map(product => {
+               
+                if(product.id === id) {
+                    return {...product,ringSize: product.isItRing ? ringSize : null,quantity : count ? Number(count) : product.quantity + 1};
+                } else {
+                    return product;
+                }
+              
+            });
+
             window.localStorage.setItem('cart', JSON.stringify(updateCart));
             return;
         }
@@ -14,7 +26,11 @@ export const localStorage = (id, count) => {
         window.localStorage.setItem('cart', JSON.stringify(updateCart));
         return;
     };
-    const createCart = [{...actualProduct, quantity : count ? Number(count) : 1}];
+    const newProduct = {...actualProduct,  quantity : count ? Number(count) : 1};
+    if(actualProduct.isItRing) {
+        newProduct.ringSize = ringSize;
+    }
+    const createCart = [newProduct];
     window.localStorage.setItem('cart', JSON.stringify(createCart));
 }
 

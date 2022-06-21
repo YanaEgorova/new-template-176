@@ -196,7 +196,7 @@ function checkFilledFields(event) {
           setError(field);
           return false;
       } else if (field.value.trim().length === 0) {
-        console.log('set error');
+        // console.log('set error');
         setError(field);
       }
   });

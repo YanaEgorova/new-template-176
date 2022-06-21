@@ -76,8 +76,11 @@ input[type=number] {
   position: relative;
   z-index: 999999;
 }
+
+
 /* ERROR START */
-.error__overlay {
+.error__overlay,
+.size-error__overlay {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -94,10 +97,13 @@ input[type=number] {
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
-body.error-active {
+body.error-active,
+body.size-error-active {
   overflow: hidden;
 }
-body.error-active .error__overlay {
+
+body.error-active .error__overlay,
+body.size-error-active .size-error__overlay {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
@@ -109,6 +115,7 @@ body.error-active .error__overlay {
   border-radius: 1rem;
   position: relative;
   text-align: center;
+  min-width: 40%;
 }
 .error__btn {
   width: 80%;
