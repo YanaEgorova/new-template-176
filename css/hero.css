@@ -80,45 +80,7 @@
 .policy__item .text {
     margin-bottom: 3rem;
 }
-.policy__box {
-    width: 25rem;
-    height: 25rem;
-    margin: 0 auto 4rem;
-    position: relative;
-}
-.policy__box .img {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    position: relative;
-}
-.policy__box::before {
-    width: 120%;
-    height: 120%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    display: block;
-    content: '';
-    border-radius: 50%;
-    background-color: var(--fourth-brand-color);
-}
-.policy__box::after {
-    width: 50%;
-    height: 100%;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    position: absolute;
-    display: block;
-    content: '';
-    background-color: var(--fourth-brand-color);
-    background-color: rgba(69, 68, 65, .7);
-    border-radius: 0 50% 50% 0;
-}
+
 
 
 
