@@ -24,9 +24,10 @@ window.onload = function() {
       if(Number(incrementAndDecrementSpan.textContent) > 1) {
          const lessBtn = document.querySelector('.js_prod__btn-less');
          lessBtn.classList.remove('disable-btn');
-         
+         console.log('lessBtn', lessBtn)
       }
    }
+
 
 };
 
@@ -80,6 +81,7 @@ function removeItem(e) {
   if(updatedCart.length === 0) {
       showEmptyMessage();
   }
+
 
 }
 

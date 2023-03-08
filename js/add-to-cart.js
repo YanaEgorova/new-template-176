@@ -4,7 +4,7 @@ let allBtns = document.querySelectorAll('.js_add-to-cart');
 export const cartSpan = document.querySelector('.js_cart__span');
 export const successMessageSpan = document.querySelector('.js_success-product-name');
 export const successMessage = document.querySelector('.js_success-message');
-const errorButtons = document.querySelectorAll('.js_error__btn');
+const errorButton = document.querySelector('.js_error__btn');
 const errorOverlay = document.querySelector('.js_error__overlay');
 
 
@@ -13,11 +13,7 @@ allBtns = [...allBtns];
 allBtns.forEach(btn => {
     btn.addEventListener('click', addToCart);
 });
-errorButtons.forEach(btn => {
-    // errorButton.addEventListener('click', removeError);
-    btn.addEventListener('click', removeError);
-})
-
+errorButton.addEventListener('click', removeError);
 errorOverlay.addEventListener('click', (e) => {
     if(e.target !== e.currentTarget) {
         return;
@@ -26,20 +22,11 @@ errorOverlay.addEventListener('click', (e) => {
 });
 
 export function removeError() {
-    console.log('z', document.body.classList.contains('size-error-active'))
-    console.log('zz', document.body.classList.contains('error-active'))
-    if(document.body.classList.contains('size-error-active')) {
-        document.body.classList.remove('size-error-active');
-    }
-    if(document.body.classList.contains('error-active')) {
-        document.body.classList.remove('error-active');
-    }
-    // document.body.classList.remove('error-active');
+    document.body.classList.remove('error-active');
 }
 
 
 function addToCart(e) {
-    console.log('111111');
     const btn = e.currentTarget;
     const product = btn.closest('.js_product');
     const productId = product.getAttribute('id');
@@ -65,15 +52,15 @@ function addToCart(e) {
        }
     })
 
-     // ADD TO LOCAL STORAGE
-     if (okay){
-        if(localStorage(productId) != false) {
-            if(cartSpan) {
-                cartSpan.textContent = Number(cartSpan.textContent) + 1;
-            }
+   // ADD TO LOCAL STORAGE
+   if (okay){
+    if(localStorage(productId) != false) {
+        if(cartSpan) {
+            cartSpan.textContent = Number(cartSpan.textContent) + 1;
         }
-        showSuccessMessage(successMessage, successMessageSpan, name);
     }
+    showSuccessMessage(successMessage, successMessageSpan, name);
+}
 
 }
 
