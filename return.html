@@ -127,9 +127,7 @@
                <li class="item">
                  <a href="./return.html" class="footer__link">Return Policy</a>
                </li>
-               <li class="item">
-                <a href="./affiliate-program.html" class="footer__link">Affiliate Program</a>
-              </li>
+           
  
              </ul>
            </div>
