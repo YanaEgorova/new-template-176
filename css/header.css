@@ -112,7 +112,8 @@ body.open-menu {
 
 
 .cart__span-box {
-    display: none;
+    display: flex;
+    margin: 0 1rem;
     align-items: center;
 }
 .cart__span-box svg {
@@ -124,7 +125,7 @@ body.open-menu {
     font-size: 3rem;
     font-family: var(--title-font);
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
     .cart__span-box {
         display: flex;
         margin-right: 3rem;
