@@ -2,7 +2,7 @@
 .hero {
     text-align: center;
     padding: 15rem 2rem 2rem;
-    border-bottom: .1rem solid var(--second-brand-color);
+    /* border-bottom: .1rem solid var(--second-brand-color); */
     border-left: .1rem solid var(--second-brand-color);
     border-right: .1rem solid var(--second-brand-color);
 }
@@ -23,7 +23,9 @@
 .hero__item:not(:last-child) {
     margin-bottom: 1rem;
 }
-
+.hero-products {
+    position: relative;
+}
 
 
 
@@ -95,7 +97,8 @@
         margin-left: 0;
     }
     .hero__block {
-        width: fit-content;
+        width: 60rem;
+        border: .1rem solid var(--second-brand-color);
         margin: 0 auto;
         position: relative;
         margin-bottom: 15rem;
@@ -110,10 +113,10 @@
     .hero__img-box {
         border-radius: 50%;
         position: absolute;
-        width: 50rem;
-        height: 50rem;
+        width: 70rem;
+        height: 70rem;
         top: 50%;
-        left: -25rem;
+        left: -35rem;
         transform: translate(0, -50%);
     }
     .hero__img-box::before {
